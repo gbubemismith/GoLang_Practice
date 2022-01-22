@@ -2,11 +2,21 @@ package main
 
 import "fmt"
 
+type Room struct {
+	name    string
+	cleaned bool
+}
+
 func main() {
 
 	//different ways to initialize arrays
 	// just size of the array
-	var arr [5]int
+	var arr [5]int // uninitialized
+
+	//easier way to initilaize arrays without specifying size
+	arr2 := [...]int{1, 2, 3}
+
+	fmt.Println(arr2)
 
 	//size and values initialized
 	var arrAge = [5]int{1, 2, 3, 4, 5}
@@ -31,6 +41,15 @@ func main() {
 	x := Sum(&array)
 	fmt.Println(x)
 
+	rooms := [...]Room{
+		{name: "Office"},
+		{name: "Retail store"},
+		{name: "Warehouse"},
+		{name: "Kitchen"},
+	}
+
+	checkCleaniness(rooms)
+
 }
 
 //receives a pointer
@@ -39,4 +58,10 @@ func Sum(a *[3]float64) (sum float64) {
 		sum += v
 	}
 	return
+}
+
+func checkCleaniness(rooms [4]Room) {
+	for i := 0; i < len(rooms); i++ {
+		fmt.Println(rooms[i].name)
+	}
 }
