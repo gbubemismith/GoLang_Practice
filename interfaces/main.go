@@ -1,21 +1,22 @@
 package main
 
-type Shaper interface {
-	Area() float32
+import "fmt"
+
+type Preparer interface {
+	PrepareDish()
 }
 
-type Square struct {
-	side float32
+type Chicken string
+type Salad string
+
+func (c *Chicken) PrepareDish() {
+	fmt.Println("Preparing dish Chicken!!!")
 }
 
-func (sq *Square) Area() float32 {
-	return sq.side * sq.side
+func (c *Salad) PrepareDish() {
+	fmt.Println("Preparing dish salad")
 }
 
 func main() {
-	sq1 := new(Square)
-	sq1.side = 5
 
-	var areaIntf Shaper
-	areaIntf = 
 }

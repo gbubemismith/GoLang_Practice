@@ -34,6 +34,13 @@ func main() {
 	a = a[0:4]
 	fmt.Println(a)
 
+	//append() function is used to add more elements
+	numbers := []int{1, 2, 3}
+	numbers = append(numbers, 4, 5, 6)
+
+	//make() function is used to preallocate a slice
+	//e.g slice := make([]int, 10)
+
 }
 
 //passing a slice to a function
